@@ -1,1 +1,88 @@
-<p>ver-pais works!</p>
+<div *ngIf="!pais; else divPais" class="d-flex justify-content-center">
+    <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+    </button>
+</div>
+
+
+<ng-template #divPais>
+    <div class="row">
+        <div class=" col-12 col-md-3">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4>Bandera</h4>
+                </div>
+                <div class="card-body">
+                    <img [src]="pais.flags.svg" class="img-thumbnail border-0 ">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Escudo</h4>
+                </div>
+                <div class="card-body">
+                    <img [src]="pais.coatOfArms.svg" class="img-thumbnail border-0">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h4>Informacion</h4>
+                </div>
+                <div class="card-body d-flex">
+                    <ul class="list-group w-100 justify-content-center">
+                        <li class="list-group-item p-4">
+                            <h6> Pais: {{ pais.name.common }}</h6>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h6> codigo Numerico: {{ pais.ccn3 }}</h6>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h6> codigo Alpha3: {{ pais.cca3 }}</h6>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h6>Capital: {{ pais.capital }}</h6>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h6>Poblacion: {{ pais.population | number }}</h6>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h6>Poblacion: {{ pais.population | number }}</h6>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h6>Lenguaje: {{ pais.languages.spa }}</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3> Traduccion: </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row  ">
+
+                        <div class="col align-self-end">
+                            <span class="badge bg-primary me-2"> {{ pais.translations['ara'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['bre'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['ces'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['cym'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['jpn'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['por'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['zho'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['swe'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['kor'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['fra'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['pol'].official }} </span>
+                            <span class="badge bg-primary me-2"> {{ pais.translations['per'].official }} </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

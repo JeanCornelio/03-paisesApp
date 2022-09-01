@@ -36,10 +36,10 @@ export class PorCapitalComponent implements OnInit {
     )
   }
 
-/*   sugerencias( termino:string ){
+  sugerencias( ){
     this.hayError = false;
   }
 
- */
+ 
 
 }
