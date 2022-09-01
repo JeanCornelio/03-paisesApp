@@ -3,7 +3,7 @@ import {  Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 @Component({
   selector: 'app-pais-input',
-  templateUrl:  './pais-input.component.html'
+  templateUrl: './pais-input.component.html'
 })
 export class PaisInputComponent implements OnInit {
 
@@ -19,7 +19,7 @@ export class PaisInputComponent implements OnInit {
   constructor() { }
   
   ngOnInit() {
-    this.debouncer
+    this.debouncer 
       .pipe(debounceTime(300))
       .subscribe( valor => {
         this.onDebounce.emit( valor );

@@ -37,6 +37,12 @@
                             <h6> Pais: {{ pais.name.common }}</h6>
                         </li>
                         <li class="list-group-item p-4">
+                            <h6> Region: {{ pais.region }}</h6>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h6> Independiente: {{ pais.independent === true? 'Si' : 'No' }}</h6>
+                        </li>
+                        <li class="list-group-item p-4">
                             <h6> codigo Numerico: {{ pais.ccn3 }}</h6>
                         </li>
                         <li class="list-group-item p-4">
@@ -47,12 +53,6 @@
                         </li>
                         <li class="list-group-item p-4">
                             <h6>Poblacion: {{ pais.population | number }}</h6>
-                        </li>
-                        <li class="list-group-item p-4">
-                            <h6>Poblacion: {{ pais.population | number }}</h6>
-                        </li>
-                        <li class="list-group-item p-4">
-                            <h6>Lenguaje: {{ pais.languages.spa }}</h6>
                         </li>
                     </ul>
                 </div>
