@@ -1,24 +1,31 @@
-<h2>Por País</h2>
-<hr>
+<div class="animate__animated animate__fadeIn">
 
-<div class="row">
-    <div class="col">
-        <app-pais-input
-            (onEnter)="buscar( $event )"
-            (onDebounce)="sugerencias( $event )"
-            placeholder="Buscar País..."
-        ></app-pais-input>
+
+    <h2 class="animate__animated animate__fadeIn">Por País <button class="btn btn-primary" (click)="clearLocale()">Limpiar Historial</button></h2>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <app-pais-input (onEnter)="buscar( $event )" (onDebounce)="sugerencias( $event )"
+                placeholder="Buscar País..."></app-pais-input>
+        </div>
     </div>
+    <app-sugerencias
+    [mostrarSugerencias]="mostrarSugerencias"
+    [paisesSugeridos]="paisesSugeridos"
+    [termino]="termino"
+    (setTermino)="buscarTermino($event)"
+    ></app-sugerencias>
+
+    <hr>
 </div>
-<hr>
 <div *ngIf="hayError" class="alert alert-danger">
     No se encontró nada con el término <b>{{ termino }}</b>
 </div>
 
 <div *ngIf="paises.length > 0 " class="row">
     <div class="col">
-      <app-pais-tabla
-        [paises]="paises">
-    </app-pais-tabla>
+        <app-pais-tabla [paises]="paises">
+        </app-pais-tabla>
     </div>
 </div>

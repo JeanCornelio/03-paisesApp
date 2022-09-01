@@ -1,0 +1,15 @@
+<ul *ngIf="mostrarSugerencias" class="list-group">
+    <li *ngFor="let pais of paisesSugeridos" class="list-group-item list-group-item-action">
+        <a class="nav-link" [routerLink]="['/pais', pais.cca2]">
+            {{pais.is === 'capital'? pais.capital : pais.name.common}}
+        </a>
+    </li>
+    <li  class="list-group-item list-group-item-action">
+        <a class="nav-link"
+         (click)="buscarTermino( termino )"
+        >
+            Buscar "{{ termino }}"
+        </a>
+
+    </li>
+</ul>

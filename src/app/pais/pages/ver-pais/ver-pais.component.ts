@@ -30,22 +30,9 @@ export class VerPaisComponent implements OnInit {
          pais.forEach(pais=>{
           this.pais = pais;
          })
-       console.log(this.pais)
+
       })
 
-
-
-/*     this.activedRoute.params
-      .subscribe( ( { id } ) =>{
-        console.log(id);
-
-      this.paisService.getPaisPorAlpha( id )
-        .subscribe( pais =>{
-          console.log(pais);
-    
-      } )
-
-  });  */
 
 }
 

@@ -35,6 +35,7 @@ export interface Country {
     capitalInfo:  CapitalInfo;
     postalCode:   PostalCode;
     alpha3Code:   string;
+    is: string;
 }
 
 export interface CapitalInfo {
