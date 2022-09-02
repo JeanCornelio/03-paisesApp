@@ -46,15 +46,15 @@ export class PorPaisComponent implements OnInit {
     this.mostrarSugerencias = true
     this.hayError = false;
     this.termino  = termino;
-    this.paisService.buscarPais( termino ).pipe(
-     
-    )
-      .subscribe( paises => {
-        this.paisesSugeridos = paises.splice(0,5)
-      },(err)=>{
-        this.paisesSugeridos = [];
-      }
-       )
+    this.paisService.buscarPais( termino )
+      .subscribe({
+        next: (paises) =>{
+          this.paisesSugeridos = paises.splice(0,5)
+        },
+        error: (err)=>{
+          this.paisesSugeridos = [];
+        }
+      })
   }
 
   buscarTermino( termino:string ){

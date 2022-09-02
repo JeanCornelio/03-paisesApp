@@ -51,14 +51,17 @@ export class PorCapitalComponent implements OnInit {
     this.termino  = termino;
 
     this.paisService.buscarCapital( termino )
-      .subscribe( capitales =>{
-        this.capitalesSugeridas = capitales.splice(0,5);
-        this.capitalesSugeridas.forEach(el=>{
-          el['is'] = 'capital';
-        })
-      }, (err)=>{
-        this.capitalesSugeridas = [];
-      } )
+      .subscribe({
+        next: ( capitales)=>{
+          this.capitalesSugeridas = capitales.splice(0,5);
+          this.capitalesSugeridas.forEach(el=>{
+            el['is'] = 'capital';
+          })
+        },
+        error:()=>{
+          this.capitalesSugeridas = [];
+        }
+      })
   }
 
 
